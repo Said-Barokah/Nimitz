@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/text_input.css">
+    <link rel="stylesheet" href="assets/css/nimitz-styles.css" />
+    <link rel="stylesheet" href="assets/css/slider.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Swiper CSS -->
+
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 1000px;
+        }
+
+        .swiper-slider {
+            min-width: 300px;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .swiper-slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .left-btn {
+            left: 0;
+        }
+
+        .right-btn {
+            right: 0;
+        }
+
+        .text-shadow {
+            text-shadow: 0 0 10px #D6AD05;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="navbar-small bg-primary">
+        <div class="navbar-small-container container-xl">
+            <a href="tel:6281285545703" class="navbar-small-phone">
+                <div class="navbar-small-phone-icon">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div class="navbar-small-phone-number">
+                    +62 812 8554 5703
+                </div>
+            </a>
+            <div class="navbar-small-social">
+                <a href="#" class="footer-social-item">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="footer-social-item">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="footer-social-item">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="footer-social-item">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="footer-social-item">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <a class="navbar-small-location">
+                Location <i class="fa fa-chevron-down ms-2"></i>
+            </a>
+        </div>
+    </div> -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">
+                <img src="assets/images/logo.png" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pick & Deliveries</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div class="d-flex justify-content-center px-0 px-lg-5">
+                        <div class="search">
+                            <input type="text" class="search-input" placeholder="Search product" name="">
+                            <a href="#" class="search-icon" style="background-color: #D6AD05;">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+    </nav>
+
+    <!-- <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="navbar-container container-xl">
+            <a href="/" class="navbar-brand d-none d-lg-block">
+                <img src="assets/images/logo.png">
+            </a>
+            <a href="#main-navbar-menu" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                aria-controls="main-navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="navbar-menu offcanvas offcanvas-end" id="main-navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item nav-item-brand d-block d-lg-none">
+                        <a href="/">
+                            <img src="assets/images/logo.png">
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link active" aria-current="page" href="/">Categories</a>
+                    </li>
+                    <li class="nav-item nav-item-search">
+                        <form class="mb-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search Products">
+                                <button type="submit" class="input-group-text">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link scroll-link">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link">Pickup & Delivery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <!-- Slider -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner d-flex justify-content-center align-items-center py-5 container">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="assets/images/banner-1.jpg" class="img-fluid rounded" alt="...">
+
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="assets/images/banner-2.jpg" class="img-fluid rounded" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <!-- <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #D6AD05;"></span> -->
+            <!-- <span class="visually-hidden">Previous</span> -->
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+            <!-- <span class="visually-hidden">Next</span> -->
+        </button>
+    </div>
+
+    <!-- Company Profile -->
+    <section class="company-profile py-3 py-md-5">
+        <div class="container">
+
+            <div class="row gy-3 gy-md-4 gy-md-0 align-items-md-start">
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <img class="img-fluid rounded" loading="lazy" src="https://picsum.photos/id/42/1000/1000"
+                        alt="About 1">
+                </div>
+                <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="row justify-content-xl-center">
+                        <div class="col-12 col-xl-11">
+                            <div class="mt-5 mt-lg-0 lg:mt-0 text-center text-lg-start mb-3">
+                                <h2 class="mb-0 fw-bold" style="font-size: 18px; color: #D6AD05;">ABOUT NIMITZ</h2>
+                                <p class="text-secondary mb-3 text-black" style="font-weight: 900; font-size: 40px;">
+                                    PREMIUM BILLIARD EQUIPMENT</p>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <p class="mb-0 text-center text-lg-start text-secondary">
+                                        PT QIU is a leading company dedicated to redefining billiard industry through
+                                        world-class products under NIMITZ brand. Specializing in premium billiard
+                                        equipment, NIMITZ equipments deliver
+                                        exceptional precision, durability, and innovation. Trusted partner for
+                                        entrepreneurs passionate in billiard business.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-5 row gy-4 gy-md-0 gx-xxl-5X">
+                                <div class="col-12 mb-0 mb-lg-3">
+                                    <div class="d-flex justify-content-center justify-content-lg-start">
+                                        <div class="d-none d-lg-block me-4 text-gold">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                        </div>
+                                        <div class="text-center text-lg-start mb-md-4 mb-lg-0">
+                                            <h2 class="mb-1" style="font-size: 18px; font-weight: 700;">VISION</h2>
+                                            <p class="text-secondary mb-0">
+                                                "To be leading brand in billiard industry"
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="d-none d-lg-block me-4 text-gold">
+                                            <i class="fa-solid fa-paperclip"></i>
+                                        </div>
+                                        <div class="text-center text-lg-start">
+                                            <h2 class="mb-1" style="font-size: 18px; font-weight: 700;">MISSION</h2>
+                                            <p class="text-secondary mb-0">
+                                                1.Deliver cutting-edge billiard equipment under the NIMITZ brand.
+                                            </p>
+                                            <p class="text-secondary mb-0">
+                                                2.Supporting entrepreneur partners with end-to-end billiard solution,
+                                                from outlet design, construction to management services.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="partners my-5">
+        <div class="text-center mb-4">
+            <h4 class="mb-1" style="font-size: 18px; font-weight: 700;">Our Growing Team of Service Partners</h4>
+        </div>
+        <div class="container">
+            <div class="row gy-3 gy-md-4 justify-content-center">
+                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <img class="img-fluid border-0 rounded" loading="lazy" src="/assets/images/point_ball.jpg"
+                        alt="Logo 1">
+                </div>
+                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <img class="img-fluid border-0 rounded" loading="lazy" src="/assets/images/logo_1.jpg" alt="Logo 2">
+                </div>
+                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <img class="img-fluid border-0 rounded" loading="lazy" src="/assets/images/logo_2.jpg" alt="Logo 3">
+                </div>
+                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <img class="img-fluid border-0 rounded" loading="lazy" src="/assets/images/logo_3.jpg" alt="Logo 4">
+                </div>
+                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <img class="img-fluid border-0 rounded" loading="lazy" src="/assets/images/logo_4.jpg" alt="Logo 5">
+                </div>
+                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <img class="img-fluid border-0 rounded" loading="lazy" src="/assets/images/point_ball.jpg"
+                        alt="Logo 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="company-key-offering px-2">
+        <div class="mb-5">
+            <div class="text-center mb-5">
+                <h2 class="mb-0 text-light fw-bold" style="font-size: 18px;">Key Offering Nimitz</h2>
+                <p class="lead mb-3" style="font-weight: 900; font-size: 40px; color: #D6AD05;">All in One Software</p>
+            </div>
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                    <div class="col-12 col-lg-6 col-xl-7 text-light order-2 order-lg-1">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fa-solid fa-check text-gold me-2"></i>
+                                        <p class="mb-0 fs-5">
+                                            Crafted with premium-grade slate for a flawlessly smooth.
+                                        </p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fa-solid fa-check text-gold me-2"></i>
+                                        <p class="mb-0 fs-5">
+                                            Engineered with cutting-edge materials.
+                                        </p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fa-solid fa-check text-gold me-2"></i>
+                                        <p class="mb-0 fs-5">
+                                            Designed to provide a professional-grade experience for players at all
+                                            levels.
+                                        </p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fa-solid fa-check text-gold me-2"></i>
+                                        <p class="mb-0 fs-5">
+                                            Comprehensive outlet operations control for efficient management.
+                                        </p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fa-solid fa-check text-gold me-2"></i>
+                                        <p class="mb-0 fs-5">
+                                            Expertise in project management and tailored outlet design solutions.
+                                        </p>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fa-solid fa-check text-gold me-2"></i>
+                                        <p class="mb-0 fs-5">
+                                            Advanced information systems, from PoS with membership features to
+                                            loT-enabled software.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-5 order-1 order-lg-2">
+                        <img class="img-fluid rounded" loading="lazy" src="https://picsum.photos/id/36/1000/1000"
+                            alt="About 1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5">
+            <div class="text-center mb-5">
+                <h2 class="mb-0 text-light fw-bold" style="font-size: 18px;">Hardware</h2>
+                <p class="lead mb-3" style="font-weight: 900; font-size: 40px; color: #D6AD05;">All Billiard Table &
+                    Accessories</p>
+            </div>
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <img class="img-fluid rounded" loading="lazy" src="https://picsum.photos/id/54/1000/1000"
+                            alt="About 1">
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7 text-light">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <div class="mb-5">
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5">
+                                                Premium tables
+                                            </p>
+                                        </div>
+                                        <p class="text-xs ms-4">Crafted with premium
+                                            grade slate and cutting-edge materials,
+                                            NIMITZ tables ensuring long-lasting
+                                            durability and professional-grade
+                                            precision</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5">
+                                                High-Performance Sticks
+                                            </p>
+                                        </div>
+                                        <p class="text-xs ms-4">Engineered for
+                                            maximum performance, deliver
+                                            unmatched balance and control.</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5">
+                                                Ambient Billiard Lighting
+                                            </p>
+                                        </div>
+                                        <p class="text-xs ms-4">Designed for
+                                            optimal visibility and style, our lighting
+                                            solutions enhance every gaming
+                                            experience</p>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5">
+                                                Elite Accessories
+                                            </p>
+                                        </div>
+                                        <p class="text-xs ms-4">A wide range of
+                                            complementary items to complete your
+                                            billiard setup (detailed list available upon
+                                            request)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5">
+            <div class="text-center mb-5">
+                <h2 class="mb-0 text-light fw-bold" style="font-size: 18px;">Turnkey</h2>
+                <p class="lead mb-3" style="font-weight: 900; font-size: 40px; color: #D6AD05;">One Stop Solution</p>
+            </div>
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-start">
+                    <div class="col-12 col-lg-6 col-xl-7 text-light order-2 order-lg-1">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <div class="mb-5">
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5 text-gold fw-bold">
+                                                Nimitz Premium Gear <span class="text-light fw-normal"> - High-quality
+                                                    billiard equispanment</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5 text-gold fw-bold">
+                                                Poinball Billiard Center <span class="text-light fw-normal"> - End to
+                                                    end
+                                                    management system</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-solid fa-check text-gold me-2"></i>
+                                            <p class="mb-0 fs-5 text-gold fw-bold">
+                                                Competitive price <span class="text-light fw-normal"> -
+                                                    Offering top-tier products and services at an accessible price point
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-5 order-1 order-lg-2">
+                        <img class="img-fluid rounded" loading="lazy" src="https://picsum.photos/id/54/1000/1000"
+                            alt="About 1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="home-section-highlight container">
+        <div class="container-xl home-section-highlight-container">
+            <div class="home-section-highlight-info">
+                <div class="text-center text-md-start mb-5">
+                    <h2 class="mb-0 text-gold fw-bold" style="font-size: 18px;">Premium Table</h2>
+                    <p class="lead mb-3" style="font-weight: 900; font-size: 40px;">Elevate Your Billiard Experience</p>
+                </div>
+                <div class="home-section-desc mb-3 text-secondary">
+                    Experience luxury with our premium billiard table—a
+                    sophisticated statement piece crafted to perfection.
+                </div>
+                <div class="home-section-subtitle mb-2 d-none d-md-block">
+                    Every purchase, you'll receive bonus :
+                </div>
+                <ul class="d-none d-md-block text-secondary">
+                    <li>5 Cue Sticks</li>
+                    <li>1 Rest Sticks</li>
+                    <li>1 Standard Ball Set</li>
+                    <li>1 Box Chalks</li>
+                    <li>1 Triangle</li>
+                    <li>1 American Pallette</li>
+                </ul>
+            </div>
+
+            <div class="home-section-hightlight-content">
+                <div id="home-highlight-swiper" class="slider-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="">
+                                <div class="highlight-item">
+                                    <div class="highlight-item-inner">
+                                        <div class="highlight-item-image">
+                                            <img src="https://picsum.photos/id/18/1000/1000" style="width: 300px;">
+                                        </div>
+                                        <div class="highlight-item-body">
+                                            <div class="highlight-item-body-title">
+                                                Nimitz Prime 10
+                                            </div>
+                                            <div class="highlight-item-body-price-discount">
+                                                <div class="highlight-item-body-price-discount-badge">
+                                                    <span class="badge bg-danger">-23% Off</span>
+                                                </div>
+                                                <div class="highlight-item-body-price-discount-value">
+                                                    Rp. 75.000.000
+                                                </div>
+                                            </div>
+                                            <div class="highlight-item-body-price">
+                                                Rp. 58.000.000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <div class="highlight-item">
+                                    <div class="highlight-item-inner">
+                                        <div class="highlight-item-image">
+                                            <img src="https://picsum.photos/id/80/1000/1000" style="width: 300px;">
+                                        </div>
+                                        <div class="highlight-item-body">
+                                            <div class="highlight-item-body-title">
+                                                Nimitz Core 18
+                                            </div>
+                                            <div class="highlight-item-body-price-discount">
+                                                <div class="highlight-item-body-price-discount-badge">
+                                                    <span class="badge bg-danger">-10% Off</span>
+                                                </div>
+                                                <div class="highlight-item-body-price-discount-value">
+                                                    Rp. 80.000.000
+                                                </div>
+                                            </div>
+                                            <div class="highlight-item-body-price">
+                                                Rp. 55.000.000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <div class="highlight-item">
+                                    <div class="highlight-item-inner">
+                                        <div class="highlight-item-image">
+                                            <img src="https://picsum.photos/id/80/1000/1000" style="width: 300px;">
+                                        </div>
+                                        <div class="highlight-item-body">
+                                            <div class="highlight-item-body-title">
+                                                Nimitz Core 18
+                                            </div>
+                                            <div class="highlight-item-body-price-discount">
+                                                <div class="highlight-item-body-price-discount-badge">
+                                                    <span class="badge bg-danger">-10% Off</span>
+                                                </div>
+                                                <div class="highlight-item-body-price-discount-value">
+                                                    Rp. 80.000.000
+                                                </div>
+                                            </div>
+                                            <div class="highlight-item-body-price">
+                                                Rp. 55.000.000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <div class="highlight-item">
+                                    <div class="highlight-item-inner">
+                                        <div class="highlight-item-image">
+                                            <img src="https://picsum.photos/id/80/1000/1000" style="width: 300px;">
+                                        </div>
+                                        <div class="highlight-item-body">
+                                            <div class="highlight-item-body-title">
+                                                Nimitz Core 18
+                                            </div>
+                                            <div class="highlight-item-body-price-discount">
+                                                <div class="highlight-item-body-price-discount-badge">
+                                                    <span class="badge bg-danger">-10% Off</span>
+                                                </div>
+                                                <div class="highlight-item-body-price-discount-value">
+                                                    Rp. 80.000.000
+                                                </div>
+                                            </div>
+                                            <div class="highlight-item-body-price">
+                                                Rp. 55.000.000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <i id="nextBtn" class="right-btn fa-solid fa-chevron-right slider-btn text-shadow"
+                        style="font-size: 40px;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-section-product container">
+        <div class="container-xl">
+            <div class="home-section-product-header">
+                <div class="home-section-product-header-title">
+                    <div class="home-section-title" style="font-size: 18px; font-weight: 600;">
+                        OUR PRODUCT
+                    </div>
+                </div>
+                <div class="home-section-product-header-category">
+                    <div class="home-section-product-category">
+                        <a class="home-section-product-category-item text-decoration-none">
+                            Glove
+                        </a>
+                        <a class="home-section-product-category-item active text-decoration-none">
+                            Accessories
+                        </a>
+                        <a class="home-section-product-category-item text-decoration-none">
+                            Cue Stick
+                        </a>
+                        <a class="home-section-product-category-item text-decoration-none">
+                            Ball
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="home-section-product-content">
+                <div class="row g-3">
+                    <div class="col-6 col-md-4">
+                        <a href="" class="home-section-product-item">
+                            <div class="home-section-product-item-image">
+                                <img src="https://picsum.photos/id/81/1000/1000">
+                            </div>
+                            <div class="home-section-product-item-info">
+                                <div class="home-section-product-item-info-subtitle">
+                                    Gloves
+                                </div>
+                                <div class="home-section-product-item-info-title">
+                                    S401-S403 IBS gloves
+                                </div>
+                                <div class="home-section-product-item-info-price">
+                                    Rp 75.000
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="" class="home-section-product-item">
+                            <div class="home-section-product-item-image">
+                                <img src="https://picsum.photos/id/82/1000/1000">
+                            </div>
+                            <div class="home-section-product-item-info">
+                                <div class="home-section-product-item-info-subtitle">
+                                    Gloves
+                                </div>
+                                <div class="home-section-product-item-info-title">
+                                    S401-S403 IBS gloves
+                                </div>
+                                <div class="home-section-product-item-info-price">
+                                    Rp 75.000
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="" class="home-section-product-item">
+                            <div class="home-section-product-item-image">
+                                <img src="https://picsum.photos/id/83/1000/1000">
+                            </div>
+                            <div class="home-section-product-item-info">
+                                <div class="home-section-product-item-info-subtitle">
+                                    Gloves
+                                </div>
+                                <div class="home-section-product-item-info-title">
+                                    S401-S403 IBS gloves
+                                </div>
+                                <div class="home-section-product-item-info-price">
+                                    Rp 75.000
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="" class="home-section-product-item">
+                            <div class="home-section-product-item-image">
+                                <img src="https://picsum.photos/id/84/1000/1000">
+                            </div>
+                            <div class="home-section-product-item-info">
+                                <div class="home-section-product-item-info-subtitle">
+                                    Gloves
+                                </div>
+                                <div class="home-section-product-item-info-title">
+                                    S401-S403 IBS gloves
+                                </div>
+                                <div class="home-section-product-item-info-price">
+                                    Rp 75.000
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="" class="home-section-product-item">
+                            <div class="home-section-product-item-image">
+                                <img src="https://picsum.photos/id/85/1000/1000">
+                            </div>
+                            <div class="home-section-product-item-info">
+                                <div class="home-section-product-item-info-subtitle">
+                                    Gloves
+                                </div>
+                                <div class="home-section-product-item-info-title">
+                                    S401-S403 IBS gloves
+                                </div>
+                                <div class="home-section-product-item-info-price">
+                                    Rp 75.000
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="" class="home-section-product-item">
+                            <div class="home-section-product-item-image">
+                                <img src="https://picsum.photos/id/54/1000/1000">
+                            </div>
+                            <div class="home-section-product-item-info">
+                                <div class="home-section-product-item-info-subtitle">
+                                    Gloves
+                                </div>
+                                <div class="home-section-product-item-info-title">
+                                    S401-S403 IBS gloves
+                                </div>
+                                <div class="home-section-product-item-info-price">
+                                    Rp 75.000
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="partner-whatsapp py-5 mt-5">
+        <div
+            class="container py-5 text-light d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">
+            <div class="col-md-6 text-center text-md-start">
+                <h1 class="fs-2 fw-bold">Want to Partner with Us?</h1>
+                <p class="text-wrap">We provide high-quality billiard equipment for businesses and personal needs. Get
+                    the best deals and collaborate with us!</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <button class="btn text-light px-4 py-3 fw-bold" style="background-color: #D6AD05;">
+                    <i class="fa-brands fa-whatsapp"></i> Contact via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-3 py-md-5 container">
+        <div class="text-center mb-5">
+            <h2 class="mb-0 text-gold fw-bold" style="font-size: 18px;">Contact Us</h2>
+            <p class="lead mb-3" style="font-size: 40px; font-weight: 900;">Stay Connected with Our Team</p>
+        </div>
+        <div class="container">
+            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-start">
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <div id="map" style="height: 500px;"></div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-7 text-light">
+                    <div class="contact-box ml-3">
+                        <form class="mt-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-2">
+                                        <div class="form__group field">
+                                            <input type="input" class="form__field" placeholder="Name" name="name"
+                                                id='name' required />
+                                            <label for="name" class="form__label">Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-2">
+                                        <div class="form__group field">
+                                            <input type="input" class="form__field" placeholder="Phone" name="name"
+                                                id='name' required />
+                                            <label for="name" class="form__label">Phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <div class="form__group field">
+                                            <input type="input" class="form__field" placeholder="Email" name="name"
+                                                id='name' required />
+                                            <label for="name" class="form__label">Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2">
+                                        <div class="form__group field">
+                                            <textarea class="form__field" rows="3" placeholder="Message"></textarea>
+                                            <label for="name" class="form__label">Message</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="form__submit mt-3 text-white border-0">
+                                        <span class="me-1">
+                                            SUBMIT
+                                        </span>
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-menu">
+            <div class="container-xl">
+                <div class="footer-menu-brand">
+                    <img src="/assets/images/logo.png">
+                    <div class="footer-menu-copyright">
+                        <div>
+                            Copyright &copy; 2025
+                        </div>
+                        <div>
+                            PT. Nimitz
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-menu-content">
+                    <div class="footer-menu-content-item">
+                        <div class="footer-menu-nav-title">
+                            Applicable Rules
+                        </div>
+                        <ol>
+                            <li>Term and Conditions</li>
+                            <li>Privacy Policy</li>
+                        </ol>
+                    </div>
+                    <div class="footer-menu-content-item">
+                        <div class="footer-menu-nav-title">
+                            About Us
+                        </div>
+                        <ol>
+                            <li>About us</li>
+                            <li>Our Product</li>
+                            <li>Career</li>
+                        </ol>
+                    </div>
+                    <div class="footer-menu-content-item">
+                        <div class="footer-menu-nav-title">
+                            Media and Partnership
+                        </div>
+                        <ol>
+                            <li>Recent Info</li>
+                            <li>Ads</li>
+                        </ol>
+                    </div>
+                    <div class="footer-menu-content-item d-flex flex-column">
+                        <div class="footer-menu-nav-title">
+                            Contact Us
+                        </div>
+                        <ol>
+                            <li>support@nimitz.id</li>
+                        </ol>
+                        <div class="footer-social mt-auto">
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/detail_product.js">
+    </script>
+    <script src="/assets/js/slider.js">
+    </script>
+    <script src="/assets/js/leaflet.js">
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slider = document.querySelector(".swiper-wrapper");
+            const nextBtn = document.getElementById("nextBtn");
+
+            let currentIndex = 0;
+            const itemWidth = document.querySelector(".swiper-slide").offsetWidth + 20;
+            const totalSlides = slider.children.length;
+
+            function moveSlide() {
+                currentIndex++;
+                if (currentIndex >= totalSlides) {
+                    currentIndex = 0;
+                }
+                slider.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            }
+
+            let autoSlide = setInterval(moveSlide, 3000);
+
+            nextBtn.addEventListener("click", function () {
+                moveSlide();
+                resetAutoSlide();
+            });
+
+            function resetAutoSlide() {
+                clearInterval(autoSlide);
+                autoSlide = setInterval(moveSlide, 3000);
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.carousel-item img {
+    width: 1116px;
+    object-fit: fill;
+    height: 500px;
+}
+@media (max-width: 768px) {
+    .carousel-item img {
+      height: 300px; /* Untuk layar tablet dan ponsel */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 200px; /* Untuk layar ponsel kecil */
+    }
+  }
+  
+
+#carouselExampleDark{
+    margin-top: 80px;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/detail_product.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/text_input.css">
+    <link rel="stylesheet" href="assets/css/nimitz-styles.css" />
+    <link rel="stylesheet" href="assets/css/slider.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">
+                <img src="assets/images/logo.png" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pick & Deliveries</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div class="d-flex justify-content-center px-0 px-lg-5">
+                        <div class="search">
+                            <input type="text" class="search-input" placeholder="Search product" name="">
+                            <a href="#" class="search-icon" style="background-color: #D6AD05;">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+    </nav>
+
+    <div id="detail_product" class="container py-5">
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-md-6 mb-4 position-relative">
+                <div class="discount-badge">20% OFF</div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080"
+                    alt="Product" class="img-fluid rounded mb-3 product-image" id="mainImage">
+                <div class="d-flex justify-content-between">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080"
+                        alt="Thumbnail 1" class="thumbnail rounded active" onclick="changeImage(event, this.src)">
+                    <img src="https://images.unsplash.com/photo-1528148343865-51218c4a13e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwzfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080"
+                        alt="Thumbnail 2" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080"
+                        alt="Thumbnail 3" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+                    <img src="https://images.unsplash.com/photo-1528148343865-51218c4a13e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwzfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080"
+                        alt="Thumbnail 4" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <button class="btn text-light fs-6 mb-3" style="background-color: #0594d6;">Aksesoris</button>
+                <h2 class="mb-3">Nimitz Prime 10</h2>
+                <div class="mb-3">
+                    <span class="h4 me-2">Rp. 349.99</span>
+                    <span class="text-muted"><s>Rp. 399.99</s></span>
+                </div>
+                <p class="mb-4" style="color: #aaa;">Experience premium sound quality and industry-leading noise
+                    cancellation with these wireless
+                    headphones. Perfect for music lovers and frequent travelers.
+                </p>
+                <div class="container">
+                    <h5 class="fs-5" style="color: #232323;">Buy now:</h5>
+                    <div class="row row-cols-1 row-cols-lg-3 g-3">
+                        <div class="col d-flex justify-content-lg-start justify-content-lg-center">
+                            <button
+                                class="btn text-light btn-lg d-flex align-items-center justify-content-center fs-6 w-100"
+                                style="max-width: 180px; height: 60px; background-color: black;">
+                                <i class="fa-brands fa-tiktok me-2"></i> Tiktok
+                            </button>
+                        </div>
+
+                        <div class="col d-flex justify-content-lg-start justify-content-lg-center">
+                            <button
+                                class="btn text-light btn-lg d-flex align-items-center justify-content-center fs-6 w-100"
+                                style="max-width: 180px; height: 60px; background-color: #42b549;">
+                                <img src="/assets/images/tokopedia.png" alt="" class="img-fluid"
+                                    style="height: 24px; width: auto; margin-right: 8px;"> Tokopedia
+                            </button>
+                        </div>
+
+                        <div class="col d-flex justify-content-lg-start justify-content-lg-center">
+                            <button
+                                class="btn text-light btn-lg d-flex align-items-center justify-content-center fs-6 w-100"
+                                style="max-width: 180px; height: 60px; background-color: #fe693b;">
+                                <img src="/assets/images/shopee.png" alt=""
+                                    style="height: 24px; width: auto; margin-right: 8px;"> Shopee
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4" style="color: #aaa;">
+                    <h5>Detail:</h5>
+                    <ul>
+                        <li>Industry-leading noise cancellation</li>
+                        <li>30-hour battery life</li>
+                        <li>Touch sensor controls</li>
+                        <li>Speak-to-chat technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h4 mb-0">Produk Serupa</h1>
+            <a href="#" class="text-decoration-none fw-bold" style="color: #D6AD05;">Lihat Semua</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="https://picsum.photos/id/1/1000/1000" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-text text-center fs-6 fw-normal">Nimitz Prime 10</h4>
+                        <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="https://picsum.photos/id/36/1000/1000" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-text text-center fs-6 fw-normal">Nimitz Prime 10</h4>
+                        <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <div class="discount-badge">20% OFF</div>
+                    <img src="https://picsum.photos/id/26/1000/1000" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-text text-center fs-6 fw-normal">Nimitz Prime 10</h4>
+                        <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="https://picsum.photos/id/30/1000/1000" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-text text-center fs-6 fw-normal">Nimitz Prime 10</h4>
+                        <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-menu">
+            <div class="container-xl">
+                <div class="footer-menu-brand">
+                    <img src="/assets/images/logo.png">
+                    <div class="footer-menu-copyright">
+                        <div>
+                            Copyright &copy; 2025
+                        </div>
+                        <div>
+                            PT. Nimitz
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-menu-content">
+                    <div class="footer-menu-content-item">
+                        <div class="footer-menu-nav-title">
+                            Applicable Rules
+                        </div>
+                        <ol>
+                            <li>Term and Conditions</li>
+                            <li>Privacy Policy</li>
+                        </ol>
+                    </div>
+                    <div class="footer-menu-content-item">
+                        <div class="footer-menu-nav-title">
+                            About Us
+                        </div>
+                        <ol>
+                            <li>About us</li>
+                            <li>Our Product</li>
+                            <li>Career</li>
+                        </ol>
+                    </div>
+                    <div class="footer-menu-content-item">
+                        <div class="footer-menu-nav-title">
+                            Media and Partnership
+                        </div>
+                        <ol>
+                            <li>Recent Info</li>
+                            <li>Ads</li>
+                        </ol>
+                    </div>
+                    <div class="footer-menu-content-item d-flex flex-column">
+                        <div class="footer-menu-nav-title">
+                            Contact Us
+                        </div>
+                        <ol>
+                            <li>support@nimitz.id</li>
+                        </ol>
+                        <div class="footer-social mt-auto">
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="#" class="footer-social-item">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/detail_product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
