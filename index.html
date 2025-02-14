@@ -27,13 +27,77 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-    <!-- Swiper CSS -->
 
-    <title>Nimitz</title>
+    <!-- Swiper CSS -->
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
         }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 1000px;
+        }
+
+        .swiper-slider {
+            min-width: 300px;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .swiper-slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .left-btn {
+            left: 0;
+        }
+
+        .right-btn {
+            right: 0;
+        }
+
+        .text-shadow {
+            text-shadow: 0 0 10px #D6AD05;
+
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+    </style>
+
+    <title>Nimitz</title>
+    <style>
 
         .slider-container {
             position: relative;
@@ -258,8 +322,8 @@
 
             <div class="row gy-3 gy-md-4 gy-md-0 align-items-md-start">
                 <div class="col-12 d-none d-lg-block col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded w-100" style="height: 500px;object-fit: cover;" loading="lazy" src="assets/images/bg-about.webp"
-                        alt="About 1">
+                    <img class="img-fluid rounded w-100" style="height: 500px;object-fit: cover;" loading="lazy"
+                        src="assets/images/bg-about.webp" alt="About 1">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="row justify-content-xl-center">
@@ -324,28 +388,46 @@
         </div>
         <div class="container">
             <div class="row gy-3 gy-md-4 justify-content-center">
-                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                    <img class="img-fluid border-0 rounded" loading="lazy" src="assets/images/point_ball.jpg"
-                        alt="Logo 1">
+                <div class="col-4 col-lg-2 d-flex justify-content-center">
+                    <img class="logo img-fluid border-0 rounded" loading="lazy"
+                        src="assets\images\partners\Poinball-Logo.png" alt="Logo 1">
                 </div>
-                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                    <img class="img-fluid border-0 rounded" loading="lazy" src="assets/images/logo_1.jpg" alt="Logo 2">
+                <div class="col-4 col-lg-2 d-flex justify-content-center">
+                    <img class="logo img-fluid border-0 rounded" loading="lazy"
+                        src="assets\images\partners\Bassura Logo.png" alt="Logo 2">
                 </div>
-                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                    <img class="img-fluid border-0 rounded" loading="lazy" src="assets/images/logo_2.jpg" alt="Logo 3">
+                <div class="col-4 col-lg-2 d-flex justify-content-center">
+                    <img class="logo img-fluid border-0 rounded" loading="lazy"
+                        src="assets\images\partners\Kalibata logo.png" alt="Logo 3">
                 </div>
-                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                    <img class="img-fluid border-0 rounded" loading="lazy" src="assets/images/logo_3.jpg" alt="Logo 4">
+                <div class="col-4 col-lg-2 d-flex justify-content-center">
+                    <img class="logo img-fluid border-0 rounded" loading="lazy"
+                        src="assets\images\partners\Citra Raya Logo.png" alt="Logo 4">
                 </div>
-                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                    <img class="img-fluid border-0 rounded" loading="lazy" src="assets/images/logo_4.jpg" alt="Logo 5">
-                </div>
-                <div class="col-4 col-md-4 col-lg-2 d-flex justify-content-center">
-                    <img class="img-fluid border-0 rounded" loading="lazy" src="assets/images/point_ball.jpg"
+                <div class="col-4 col-lg-2 d-flex justify-content-center">
+                    <img class="logo img-fluid border-0 rounded" loading="lazy" src="assets\images\partners\RX Logo.png"
                         alt="Logo 6">
+                </div>
+                <div class="col-4 col-lg-2 d-flex justify-content-center">
+                    <img class="logo img-fluid border-0 rounded" loading="lazy"
+                        src="assets\images\partners\PPG logo.png" alt="Logo 6">
                 </div>
             </div>
         </div>
+        <!-- <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/images/partners/Poinball-Logo.png" alt="Logo 1"></div>
+                <div class="swiper-slide"><img src="assets/images/partners/Bassura Logo.png" alt="Logo 2"></div>
+                <div class="swiper-slide"><img src="assets/images/partners/Kalibata logo.png" alt="Logo 3"></div>
+                <div class="swiper-slide"><img src="assets/images/partners/Citra Raya Logo.png" alt="Logo 4"></div>
+                <div class="swiper-slide"><img src="assets/images/partners/Nimitz Logo.png" alt="Logo 5"></div>
+                <div class="swiper-slide"><img src="assets/images/partners/PPG logo.png" alt="Logo 6"></div>
+                <div class="swiper-slide"><img src="assets/images/partners/RX Logo.png" alt="Logo 7"></div>
+            </div>
+        </div> -->
+
+
+
     </section>
 
 
@@ -404,8 +486,8 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-5 order-1 order-lg-2">
-                        <img class="img-fluid rounded w-100" style="height: 443px; object-fit: cover;" loading="lazy" src="assets/images/bg-key-offering.webp"
-                            alt="About 1">
+                        <img class="img-fluid rounded w-100" style="height: 443px; object-fit: cover;" loading="lazy"
+                            src="assets/images/bg-key-offering.webp" alt="About 1">
                     </div>
                 </div>
             </div>
@@ -419,8 +501,8 @@
             <div class="container">
                 <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                     <div class="col-12 col-lg-6 col-xl-5">
-                        <img class="img-fluid rounded w-100" style="height: 443px; object-fit: cover;" loading="lazy" src="assets/images/bg-hardware-table.webp"
-                            alt="About 1">
+                        <img class="img-fluid rounded w-100" style="height: 443px; object-fit: cover;" loading="lazy"
+                            src="assets/images/bg-hardware-table.webp" alt="About 1">
                     </div>
                     <div class="col-12 col-lg-6 col-xl-7 text-light">
                         <div class="row justify-content-end">
@@ -526,8 +608,8 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-5 order-1 order-lg-2">
-                        <img class="img-fluid rounded w-100" style="height: 443px; object-fit: cover;" loading="lazy" src="assets/images/turnkey.webp"
-                            alt="About 1">
+                        <img class="img-fluid rounded w-100" style="height: 443px; object-fit: cover;" loading="lazy"
+                            src="assets/images/turnkey.webp" alt="About 1">
                     </div>
                 </div>
             </div>
@@ -687,258 +769,47 @@
                 </div>
                 <div class="home-section-product-header-category">
                     <div class="home-section-product-category">
-                        <button onclick="filterProducts('glove',event)"
-                            class="home-section-product-category-item text-decoration-none border-0">
-                            Glove
-                        </button>
-                        <button onclick="filterProducts('accessories',event)"
-                            class="home-section-product-category-item text-decoration-none border-0">
-                            Accessories
-                        </button>
-                        <button onclick="filterProducts('cue',event)"
-                            class="home-section-product-category-item text-decoration-none border-0">
-                            Cue Stick
-                        </button>
                         <button onclick="filterProducts('ball',event)"
                             class="home-section-product-category-item active text-decoration-none border-0">
                             Ball
                         </button>
+                        <button onclick="filterProducts('cue',event)"
+                            class="home-section-product-category-item text-decoration-none border-0">
+                            Cue
+                        </button>
+                        <button onclick="filterProducts('lamp',event)"
+                            class="home-section-product-category-item text-decoration-none border-0">
+                            Lamp
+                        </button>
+                        <button onclick="filterProducts('table',event)"
+                            class="home-section-product-category-item text-decoration-none border-0">
+                            Table
+                        </button>
                     </div>
-                </div>
-            </div>
-            <div class="product home-section-product-content d-none" data-category="glove">
-                <div class="row g-3" id="product-glove">
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/81/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/82/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/83/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/84/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/85/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/54/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="product home-section-product-content d-none" data-category="accessories">
-                <div class="row g-3" id="product-accessories">
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/71/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/62/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/53/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/24/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/15/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <a href="detail_product.html" class="home-section-product-item">
-                            <div class="home-section-product-item-image">
-                                <img src="https://picsum.photos/id/4/1000/1000">
-                            </div>
-                            <div class="home-section-product-item-info">
-                                <div class="home-section-product-item-info-subtitle">
-                                    Gloves
-                                </div>
-                                <div class="home-section-product-item-info-title">
-                                    S401-S403 IBS gloves
-                                </div>
-                                <div class="home-section-product-item-info-price">
-                                    Rp 75.000
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="product home-section-product-content d-none" data-category="cue">
-                <div class="row g-3" id="product-cue">
                 </div>
             </div>
             <div class="product home-section-product-content d-none" data-category="ball">
                 <div class="row g-3" id="product-ball">
                 </div>
             </div>
-
+            <div class="product home-section-product-content d-none" data-category="lamp">
+                <div class="row g-3" id="product-lamp">
+                    <div class="col-6 col-md-4">
+                    </div>
+                </div>
+            </div>
+            <div class="product home-section-product-content d-none" data-category="table">
+                <div class="row g-3" id="product-table">
+                    <div class="col-6 col-md-4">
+                        
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="product home-section-product-content d-none" data-category="cue">
+                <div class="row g-3" id="product-cue">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1098,19 +969,24 @@
             </div>
         </div>
     </footer>
-
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/detail_product.js">
-    </script>
+    <!-- <script src="assets/js/detail_product.js">
+    </script> -->
     <script src="assets/js/slider.js">
     </script>
     <script src="assets/js/leaflet.js">
     </script>
+
+
+
+
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const slider = document.querySelector(".swiper-wrapper");
@@ -1180,34 +1056,32 @@
         function loadProducts(productCount) {
 
             const ContainerBall = document.getElementById('product-ball');
-            const ContainerGlove = document.getElementById('product-glove');
-            const ContainerAccessories = document.getElementById('product-accessories');
+            const ContainerLamp = document.getElementById('product-lamp');
+            const ContainerTable = document.getElementById('product-table');
             const ContainerCue = document.getElementById('product-cue');
-            const productGlove = [
-                {image: 'assets/images/product/gloves/glove-1.JPG', category: 'Glove', name: 'Nimitz Glove', price: 'Rp 50.0000'},
+            const productLamp = [
+                { image: 'assets/images/product/lamp/lamp-1.webp', category: 'Lamp', name: 'Nimitz Lamp', price: 'Rp 50.0000' },
             ]
             const productBall = [
-                { image: 'assets/images/product/ball/ball-1.jpg', category: 'Ball', name: 'Nimitz Billiard Ball', price: 'Rp 75.000' },
+                { image: 'assets/images/product/ball/ball-1.webp', category: 'Ball', name: 'Nimitz Billiard Ball', price: 'Rp 75.000' },
             ];
-            const productAccessories = [
-                { image: 'assets/images/product/accessories/cue-chalk-1.JPG', category: 'Accessories', name: 'Nimitz Cue Chalk 1', price: 'Rp 75.000' },
-                { image: 'assets/images/product/accessories/cue-chalk-2.JPG', category: 'Accessories', name: 'Nimitz Cue Chalk 2', price: 'Rp 55.000' },
+            const productTable = [
+                { image: 'assets/images/product/tables/table-1.webp', category: 'Table', name: 'Nimitz Table', price: 'Rp 45.000.000' },
             ];
             const productCue = [
-                { image: 'assets/images/product/cue/cue-1.JPG', category: 'Cue', name: 'Nimitz Cue 1', price: 'Rp 15.000' },
-                { image: 'assets/images/product/cue/cue-bundle.JPG', category: 'Cue', name: 'Nimitz Cue Bundle', price: 'Rp 55.000' },
+                { image: 'assets/images/product/cue/cue-1.webp', category: 'Cue', name: 'Nimitz Cue 1', price: 'Rp 15.000' },
             ];
 
             ContainerBall.innerHTML = '';
-            ContainerGlove.innerHTML = '';
-            ContainerAccessories.innerHTML = '';
+            ContainerLamp.innerHTML = '';
+            ContainerTable.innerHTML = '';
             ContainerCue.innerHTML = '';
 
             for (let i = 0; i < productCount && i <= productBall.length - 1; i++) {
                 const product = productBall[i];
                 const productHTML = `
                 <div class="col-6 col-md-4">
-                    <a href="detail_product.html" class="home-section-product-item">
+                    <a href="detail_product.html?product=ball" class="home-section-product-item">
                         <div class="home-section-product-item-image">
                             <img src="${product.image}" alt="${product.name}">
                         </div>
@@ -1224,11 +1098,11 @@
             `;
                 ContainerBall.innerHTML += productHTML;
             }
-            for (let i = 0; i < productCount && i <= productGlove.length - 1; i++) {
-                const product = productGlove[i];
+            for (let i = 0; i < productCount && i <= productLamp.length - 1; i++) {
+                const product = productLamp[i];
                 const productHTML = `
                     <div class="col-6 col-md-4">
-                            <a href="detail_product.html" class="home-section-product-item">
+                            <a href="detail_product.html?product=lamp" class="home-section-product-item">
                                 <div class="home-section-product-item-image">
                                     <img src="${product.image}" alt="${product.name}">
                                 </div>
@@ -1244,13 +1118,13 @@
                         </div>
                     `;
 
-                ContainerGlove.innerHTML += productHTML;
+                ContainerLamp.innerHTML += productHTML;
             }
-            for (let i = 0; i < productCount && i <= productAccessories.length - 1; i++) {
-                const product = productAccessories[i];
+            for (let i = 0; i < productCount && i <= productTable.length - 1; i++) {
+                const product = productTable[i];
                 const productHTML = `
                     <div class="col-6 col-md-4">
-                            <a href="detail_product.html" class="home-section-product-item">
+                            <a href="detail_product.html?product=table" class="home-section-product-item">
                                 <div class="home-section-product-item-image">
                                     <img src="${product.image}" alt="${product.name}">
                                 </div>
@@ -1267,13 +1141,13 @@
                         </div>
                     `;
 
-                ContainerAccessories.innerHTML += productHTML;
+                ContainerTable.innerHTML += productHTML;
             }
             for (let i = 0; i < productCount && i <= productCue.length - 1; i++) {
                 const product = productCue[i];
                 const productHTML = `
                     <div class="col-6 col-md-4">
-                            <a href="detail_product.html" class="home-section-product-item">
+                            <a href="detail_product.html?product=cue" class="home-section-product-item">
                                 <div class="home-section-product-item-image">
                                     <img src="${product.image}" alt="${product.name}">
                                 </div>
