@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/detail_product.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/text_input.css">
-    <link rel="stylesheet" href="assets/css/nimitz-styles.css" />
-    <link rel="stylesheet" href="assets/css/slider.css" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="assets/css/detail_product.css?version=1.1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css?version=1.1" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?version=1.1" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css?version=1.1">
+    <link rel="stylesheet" href="assets/css/text_input.css?version=1.1">
+    <link rel="stylesheet" href="assets/css/nimitz-styles.css?version=1.1" />
+    <link rel="stylesheet" href="assets/css/slider.css?version=1.1" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css?version=1.1" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css?version=1.1" rel="stylesheet">
 
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?version=1.1" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?version=1.1"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?version=1.1"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?version=1.1" />
     <title>Document</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <img src="assets/images/logo.png" style="height: 70px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,10 +45,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link nav-active" aria-current="page" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile.html">Profile</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -68,21 +76,22 @@
         </div>
     </nav>
 
+
     <div id="detail_product" class="container py-5">
         <div class="row">
             <!-- Product Images -->
             <div class="col-md-6 mb-4 position-relative">
                 <!-- <div class="discount-badge">20% OFF</div> -->
-                <img src="/assets/images/product/cue/cue-bundle.JPG"
+                <img src=""
                     alt="Product" class="img-fluid rounded mb-3 product-image w-100" id="mainImage">
                 <div class="d-flex justify-content-between">
-                    <img id="thumbnail-1" src="/assets/images/product/cue/cue-bundle-1.JPG"
+                    <img id="thumbnail-1" src=""
                         alt="Thumbnail 1" class="thumbnail rounded active" onclick="changeImage(event, this.src)">
-                    <img id="thumbnail-2" src="/assets/images/product/cue/cue-bundle-2.JPG"
+                    <img id="thumbnail-2" src=""
                         alt="Thumbnail 2" class="thumbnail rounded" onclick="changeImage(event, this.src)">
-                    <img id="thumbnail-3" src="/assets/images/product/cue/cue-bundle-3.JPG"
+                    <img id="thumbnail-3" src=""
                         alt="Thumbnail 3" class="thumbnail rounded" onclick="changeImage(event, this.src)">
-                    <img id="thumbnail-4" src="/assets/images/product/cue/cue-bundle.JPG"
+                    <img id="thumbnail-4" src=""
                         alt="Thumbnail 4" class="thumbnail rounded" onclick="changeImage(event, this.src)">
                 </div>
             </div>
@@ -130,11 +139,11 @@
                     <div class="col-12 mt-2">
                         <h5 class="fs-5" style="color: #232323;">Dapatkan Harga terbaik via Admin :</h5>
                         <div class="col d-flex justify-content-lg-start justify-content-lg-center">
-                            <button
+                            <a href="https://wa.me/6281233650630?" target="_blank" id="Whatsapp-link"
                                 class="btn text-light btn-lg d-flex align-items-center justify-content-center fs-6 w-100"
                                 style="max-width: 180px; height: 60px; background-color: #42b549;">
                                 <i class="fa-brands fa-whatsapp me-2" style="font-size: 24px;"></i> Whatsapp
-                            </button>
+                            <a/>
                         </div>
                     </div>
                 </div>
@@ -144,53 +153,7 @@
             </div>
         </div>
     </div>
-    <div class="container" style="margin-bottom: 80px;">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1 class="h4 mb-0">Produk Serupa</h1>
-            <a href="#" class="text-decoration-none fw-bold" style="color: #D6AD05;">Lihat Semua</a>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
-            <div class="col">
-                <div class="card h-100 border-0">
-                    <img src="assets/images/product/accessories/cue-chalk-1.JPG" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h4 class="card-text text-center fs-6 fw-normal">Nimitz Cue Chalk</h4>
-                        <!-- <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 border-0">
-                    <img src="assets/images/product/ball/ball-1.jpg" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h4 class="card-text text-center fs-6 fw-normal">Nimitz Ball 1</h4>
-                        <!-- <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 border-0">
-                    <!-- <div class="discount-badge">20% OFF</div> -->
-                    <img src="assets/images/product/accessories/cue-chalk-2.JPG" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h4 class="card-text text-center fs-6 fw-normal">Cue Chalk 2</h4>
-                        <!-- <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 border-0">
-                    <img src="assets/images/product/gloves/glove-1.JPG" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h4 class="card-text text-center fs-6 fw-normal">Glove 1</h4>
-                        <!-- <h5 class="text-center fs-6 fw-bold">Rp. 500.000</h5> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+   
     <footer>
         <div class="footer-menu">
             <div class="container-xl">
@@ -263,11 +226,20 @@
             </div>
         </div>
     </footer>
-
-    <script src="assets/js/detail_product.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="assets/js/data-product.js?version=1.1"></script>
+    <script src="assets/js/detail_product.js?version=1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js?version=1.1"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem('reloaded')) {
+                sessionStorage.setItem('reloaded', 'true');
+                location.reload(true);
+            }
+        };
+
+    </script>
 </body>
 
 </html>
